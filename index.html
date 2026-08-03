@@ -8,37 +8,32 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="top-bar">
     <div class="container">
-      <h1>Vincenzo Graw</h1>
-      <p class="tagline">Grey Hat · Builder · Security · Code</p>
+      <span class="faction" id="faction"></span>
+      <h1 id="agent-name"></h1>
+      <span class="rank" id="agent-rank"></span>
     </div>
   </header>
 
-  <main class="container">
-    <section class="intro">
-      <h2>Ideology</h2>
-      <p>Understand both sides. Operate ethically. Document everything. Keep learning.</p>
+  <main class="container layout">
+    <section class="agent-card">
+      <div class="avatar-wrap">
+        <div class="avatar" id="avatar"></div>
+        <span class="rank avatar-rank" id="avatar-rank"></span>
+      </div>
+      <dl class="agent-meta" id="agent-meta"></dl>
+      <div class="stats" id="stats"></div>
     </section>
 
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul id="skills-list"></ul>
-    </section>
-
-    <section class="experience">
-      <h2>Experience</h2>
-      <ul id="experience-list"></ul>
-    </section>
-
-    <section class="gallery">
-      <h2>Highlights</h2>
-      <div id="gallery-grid" class="gallery-grid"></div>
+    <section class="detail-panel">
+      <nav class="tabs" id="tabs"></nav>
+      <div class="tab-content" id="tab-content"></div>
     </section>
   </main>
 
-  <footer class="site-footer container">
-    <p>Built for the grey hat path.</p>
+  <footer class="container">
+    <p>Grey Hat operator — built for Netlify.</p>
   </footer>
 </body>
 </html>
