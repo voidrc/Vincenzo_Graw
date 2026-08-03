@@ -1,0 +1,116 @@
+:root {
+  --bg: #0b0c10;
+  --surface: #1f2833;
+  --text: #c5c6c7;
+  --muted: #66fcf1;
+  --accent: #45a29e;
+  --border: #45a29e;
+  --max: 800px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: "Fira Code", "Courier New", monospace;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header {
+  padding: 4rem 0 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--surface);
+}
+
+.tagline {
+  color: var(--accent);
+  font-family: monospace;
+}
+
+section {
+  margin: 3rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+#skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#skills-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-family: monospace;
+}
+
+#experience-list li {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+#experience-list li strong {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  min-height: 120px;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  align-items: center;
+  justify-items: center;
+  color: var(--accent);
+  padding: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--accent);
+  border-top: 1px solid var(--surface);
+}
+
+.error {
+  color: #ff6b6b;
+  font-family: monospace;
+  margin: 1rem auto;
+}

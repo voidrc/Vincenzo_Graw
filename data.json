@@ -1,0 +1,30 @@
+{
+  "name": "Vincenzo Graw",
+  "tagline": "Grey Hat · Builder · Security · Code",
+  "skills": [
+    "Linux",
+    "Java",
+    "Python",
+    "C",
+    "C++",
+    "Docker",
+    "Git",
+    "Network",
+    "Security",
+    "Podman"
+  ],
+  "experience": [
+    {
+      "title": "F3D",
+      "description": "Open-source, terminal based 3D viewer. Implemented the 'alias' feature for its built-in commands."
+    },
+    {
+      "title": "CTFs"
+    },
+    {
+      "title": "National AI hackathon",
+      "description": "Samarkand, 2nd place, Clean-Code nomination"
+    }
+  ],
+  "gallery": []
+}
