@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --accent: oklch(0.55 0.2 275);
+  --accent-soft: oklch(0.55 0.2 275 / 0.12);
+}
+
+.dark {
+  --accent: oklch(0.72 0.17 285);
+  --accent-soft: oklch(0.72 0.17 285 / 0.15);
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-zinc-50 text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200;
+}
+
+.site-bg {
+  background-image:
+    radial-gradient(600px 400px at 15% 0%, var(--accent-soft), transparent 70%),
+    radial-gradient(700px 500px at 85% 90%, var(--accent-soft), transparent 70%);
+}
+
+.site-grid {
+  background-image:
+    linear-gradient(to right, rgb(0 0 0 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.dark .site-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 24px,
+    black calc(100% - 24px),
+    transparent
+  );
+}
