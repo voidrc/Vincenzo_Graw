@@ -40,7 +40,7 @@ export function Skills() {
             </h3>
             <ul className="mt-4 space-y-3.5">
               {cat.skills.map((skill) => {
-                const style = levelStyles[skill.level];
+                const style = skill.level ? levelStyles[skill.level] : null;
                 return (
                   <li key={skill.name}>
                     <div className="flex items-center gap-2.5">
@@ -48,20 +48,26 @@ export function Skills() {
                       <span className="min-w-0 flex-1 truncate text-sm font-medium text-zinc-800 dark:text-zinc-200">
                         {skill.name}
                       </span>
-                      <span className="font-mono text-[11px] text-zinc-400 dark:text-zinc-500">
-                        {skill.years} yrs
-                      </span>
-                      <span
-                        className={`rounded-full border px-1.5 py-px text-[10px] font-medium ${style.tag}`}
-                      >
-                        {skill.level}
-                      </span>
+                      {skill.years != null && (
+                        <span className="font-mono text-[11px] text-zinc-400 dark:text-zinc-500">
+                          {skill.years} yrs
+                        </span>
+                      )}
+                      {style && (
+                        <span
+                          className={`rounded-full border px-1.5 py-px text-[10px] font-medium ${style.tag}`}
+                        >
+                          {skill.level}
+                        </span>
+                      )}
                     </div>
-                    <div className="ml-[26px] mt-1.5 h-1 overflow-hidden rounded-full bg-black/[0.06] dark:bg-white/[0.08]">
-                      <div
-                        className={`h-full rounded-full bg-accent/70 ${style.width}`}
-                      />
-                    </div>
+                    {style && (
+                      <div className="ml-[26px] mt-1.5 h-1 overflow-hidden rounded-full bg-black/[0.06] dark:bg-white/[0.08]">
+                        <div
+                          className={`h-full rounded-full bg-accent/70 ${style.width}`}
+                        />
+                      </div>
+                    )}
                   </li>
                 );
               })}

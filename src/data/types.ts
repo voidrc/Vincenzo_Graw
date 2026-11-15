@@ -10,7 +10,7 @@ export interface Profile {
   name: string;
   title: string;
   tagline: string;
-  location: string;
+  location?: string;
   availability: string;
   avatarUrl?: string;
   resumeUrl: string;
@@ -22,10 +22,10 @@ export interface ExperienceItem {
   role: string;
   company: string;
   companyUrl?: string;
-  start: string;
+  start?: string;
   end: string;
   current?: boolean;
-  location: string;
+  location?: string;
   summary: string;
   responsibilities: string[];
   impact: { value: string; label: string }[];
@@ -35,8 +35,8 @@ export interface ExperienceItem {
 export interface Skill {
   name: string;
   icon: LucideIcon;
-  years: number;
-  level: "Expert" | "Advanced" | "Proficient" | "Familiar";
+  years?: number;
+  level?: "Expert" | "Advanced" | "Proficient" | "Familiar";
 }
 
 export interface SkillCategory {

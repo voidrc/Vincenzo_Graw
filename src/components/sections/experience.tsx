@@ -29,7 +29,7 @@ export function Experience() {
                 {job.role}
               </h3>
               <span className="font-mono text-xs text-zinc-500 dark:text-zinc-500">
-                {job.start} — {job.end}
+                {job.start ? `${job.start} — ${job.end}` : job.end}
               </span>
             </div>
             <p className="mt-0.5 text-sm">
@@ -45,10 +45,12 @@ export function Experience() {
               ) : (
                 <span className="font-medium text-accent">{job.company}</span>
               )}
-              <span className="text-zinc-500 dark:text-zinc-500">
-                {" "}
-                · {job.location}
-              </span>
+              {job.location && (
+                <span className="text-zinc-500 dark:text-zinc-500">
+                  {" "}
+                  · {job.location}
+                </span>
+              )}
             </p>
             <p className="mt-2.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
               {job.summary}
@@ -58,7 +60,7 @@ export function Experience() {
                 <li key={r}>{r}</li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2 empty:hidden">
               {job.impact.map((m) => (
                 <span
                   key={m.label}

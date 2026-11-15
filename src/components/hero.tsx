@@ -56,9 +56,13 @@ export function Hero() {
         </p>
 
         <div className="mt-4 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 text-xs text-zinc-500 lg:justify-start dark:text-zinc-400">
-          <MapPin className="size-3.5 shrink-0" />
-          <span>{profile.location}</span>
-          <span aria-hidden>·</span>
+          {profile.location && (
+            <>
+              <MapPin className="size-3.5 shrink-0" />
+              <span>{profile.location}</span>
+              <span aria-hidden>·</span>
+            </>
+          )}
           <span>{profile.availability}</span>
         </div>
 
